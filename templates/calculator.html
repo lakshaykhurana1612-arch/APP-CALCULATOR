@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            font-family: Arial;
+        }
+
+        .calc {
+            background: #222;
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            color: lime;          /* 👈 text color */
+            background: black;    /* 👈 background */
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            height: 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .op { background: orange; }
+        .num { background: #444; color: white; }
+        .eq { background: green; color: white; }
+        .clr { background: red; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="calc">
+    <input id="display" disabled>
+
+    <div class="buttons">
+        <button class="clr" onclick="clearDisplay()">C</button>
+        <button class="op" onclick="press('/')">/</button>
+        <button class="op" onclick="press('*')">*</button>
+        <button class="op" onclick="press('-')">-</button>
+
+        <button class="num" onclick="press('7')">7</button>
+        <button class="num" onclick="press('8')">8</button>
+        <button class="num" onclick="press('9')">9</button>
+        <button class="op" onclick="press('+')">+</button>
+
+        <button class="num" onclick="press('4')">4</button>
+        <button class="num" onclick="press('5')">5</button>
+        <button class="num" onclick="press('6')">6</button>
+        <button class="eq" onclick="calculate()">=</button>
+
+        <button class="num" onclick="press('1')">1</button>
+        <button class="num" onclick="press('2')">2</button>
+        <button class="num" onclick="press('3')">3</button>
+        <button class="num" onclick="press('0')">0</button>
+    </div>
+
+    <br>
+    <a href="/dashboard" style="color:rgb(146, 225, 8)29, 101, 101);">⬅ Back</a>
+</div>
+
+<script>
+let display = document.getElementById("display");
+
+function press(val) {
+    display.value += val;
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+function calculate() {
+    try {
+        display.value = eval(display.value);
+    } catch {
+        display.value = "Error";
+    }
+}
+</script>
+
+</body>
+</html>

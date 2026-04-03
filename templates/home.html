@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<h1>Dashboard 🔥</h1>
+
+<select onchange="navigate(this.value)">
+    <option value="">-- Select Tool --</option>
+    <option value="/calculator">Calculator</option>
+</select>
+
+<script>
+function navigate(value) {
+    if (value) {
+        window.location.href = value;
+    }
+}
+</script>
+
+<br><br>
+<a href="/logout">Logout</a>
+
+</body>
+</html>
