@@ -33,14 +33,7 @@ def login():
             login_user(user)
             return redirect("/dashboard")
 
-    return '''
-        <form method="post">
-            <input name="username" placeholder="username">
-            <input name="password" type="password" placeholder="password">
-            <button type="submit">Login</button>
-        </form>
-    '''
-
+    return render_template("login.html")
 @app.route("/calculator")
 @login_required
 def calculator():

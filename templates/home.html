@@ -1,27 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        select {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        select:hover {
+            background: #444;
+        }
+
+        .card {
+            margin: 30px auto;
+            padding: 20px;
+            width: 250px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ff9999;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Dashboard 🔥</h1>
+<div class="container">
+    <h1>🚀 Welcome Bro</h1>
+    <p>Your personal mini app is live</p>
 
-<select onchange="navigate(this.value)">
-    <option value="">-- Select Tool --</option>
-    <option value="/calculator">Calculator</option>
-</select>
+    <div class="card">
+        <h3>Select Tool</h3>
+
+        <select onchange="go(this.value)">
+            <option value="">-- Choose --</option>
+            <option value="/calculator">🧮 Calculator</option>
+        </select>
+    </div>
+
+    <a href="/logout">Logout</a>
+</div>
 
 <script>
-function navigate(value) {
-    if (value) {
-        window.location.href = value;
-    }
+function go(val) {
+    if(val) window.location.href = val;
 }
 </script>
-
-<br><br>
-<a href="/logout">Logout</a>
 
 </body>
 </html>
