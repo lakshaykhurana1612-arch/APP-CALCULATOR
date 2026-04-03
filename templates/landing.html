@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.08);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            margin: 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .login {
+            background: #00c6ff;
+            color: white;
+        }
+
+        .login:hover {
+            background: #0072ff;
+            transform: scale(1.05);
+        }
+
+        .guest {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .guest:hover {
+            background: white;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🚀 Welcome Bro</h1>
+    <p>Your smart calculator app is ready</p>
+
+    <a href="/login" class="btn login">🔐 Login</a>
+    <a href="/dashboard" class="btn guest">⚡ Continue</a>
+</div>
+
+</body>
+</html>

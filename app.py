@@ -18,10 +18,12 @@ users = {"bro": {"password": "123"}}
 def load_user(user_id):
     return User(user_id)
 
+# 👉 LANDING PAGE (fancy)
 @app.route("/")
 def home():
-    return "<h1>Home Page</h1><a href='/login'>Login</a>"
+    return render_template("landing.html")
 
+# 👉 LOGIN
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -34,24 +36,25 @@ def login():
             return redirect("/dashboard")
 
     return render_template("login.html")
+
+# 👉 CALCULATOR
 @app.route("/calculator")
 @login_required
 def calculator():
     return render_template("calculator.html")
 
+# 👉 DASHBOARD
 @app.route("/dashboard")
 @login_required
 def dashboard():
     return render_template("home.html")
 
-
+# 👉 LOGOUT
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect("/")
-
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
