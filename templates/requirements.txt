@@ -1,0 +1,6 @@
+flask
+flask-login
+sqlalchemy
+passlib
+requests
+python-dotenv
